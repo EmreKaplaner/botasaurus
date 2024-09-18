@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 install_requires = [
     "psutil",    
@@ -20,7 +20,6 @@ cpython_dependencies = [
     "PyDispatcher>=2.0.5",
 ]
 
-
 def get_description():
     try:
         with open("README.md", encoding="utf-8") as readme_file:
@@ -31,13 +30,12 @@ def get_description():
 
 setup(
     name="botasaurus",
-    packages=["botasaurus"],
     version='4.0.59',
     license="MIT",
     project_urls={
         "Documentation": "https://omkar.cloud/botasaurus/",
-        "Source": "https://github.com/omkarcloud/botasaurus",
-        "Tracker": "https://github.com/omkarcloud/botasaurus/issues",
+        "Source": "https://github.com/EmreKaplaner/botasaurus",
+        "Tracker": "https://github.com/EmreKaplaner/botasaurus/issues",
     },
     description="The All in One Web Scraping Framework",
     long_description_content_type="text/markdown",
@@ -81,6 +79,7 @@ setup(
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
     python_requires=">=3.7",
+    packages=find_packages(include=['botasaurus', 'botasaurus_server']),
     install_requires=install_requires,
     extras_require=extras_require,
 )
